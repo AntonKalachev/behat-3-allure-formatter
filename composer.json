@@ -1,5 +1,5 @@
 {
-    "name": "bstrx/behat3-allure-formatter",
+    "name": "antonkalachev/behat3-allure-formatter",
     "description": "Behat 3 Allure formatter",
     "keywords": ["Allure", "Behat", "Formatter", "PHP", "BDD"],
     "type": "library",
