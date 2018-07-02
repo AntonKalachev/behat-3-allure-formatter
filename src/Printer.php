@@ -1,6 +1,6 @@
 <?php
 
-namespace Bstrx\Behat3AllureFormatter;
+namespace Antonkalachev\Behat3AllureFormatter;
 
 use Behat\Testwork\Output\Printer\OutputPrinter as PrinterInterface;
 
