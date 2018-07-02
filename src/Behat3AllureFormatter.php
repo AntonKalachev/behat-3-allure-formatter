@@ -1,6 +1,6 @@
 <?php
 
-namespace Bstrx\Behat3AllureFormatter;
+namespace Antonkalachev\Behat3AllureFormatter;
 
 use Behat\Behat\EventDispatcher\Event\AfterFeatureTested;
 use Behat\Behat\EventDispatcher\Event\AfterOutlineTested;
