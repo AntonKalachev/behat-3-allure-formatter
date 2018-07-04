@@ -151,7 +151,8 @@ class Behat3AllureFormatter implements Formatter
             'tester.outline_tested.before' => 'onBeforeOutlineTested',
             'tester.outline_tested.after' => 'onAfterOutlineTested',
             'tester.step_tested.before' => 'onBeforeStepTested',
-            'tester.step_tested.after' => 'onAfterStepTested'
+            'tester.step_tested.after' => 'onAfterStepTested',
+            'tester.example_tested.after' => 'onExampleTested'
         ];
     }
 
@@ -329,6 +330,14 @@ class Behat3AllureFormatter implements Formatter
      * @param AfterOutlineTested $event
      */
     public function onAfterOutlineTested(AfterOutlineTested $event)
+    {
+        $this->processScenarioResult($event);
+    }
+
+    /**
+     * @param ExampleTested $event
+     */
+    public function onExampleTested(AfterScenarioTested $event)
     {
         $this->processScenarioResult($event);
     }
@@ -520,9 +529,9 @@ class Behat3AllureFormatter implements Formatter
         }
 
         $fileName = preg_replace(
-                '/[^\-\.\w]/',
-                '_',
-                $event->getScenario()->getTitle()
+            '/[^\-\.\w]/',
+            '_',
+            $event->getScenario()->getTitle()
             ) . '.png';
 
         $filePath = sprintf('%s/%s', $featureScreenshotsDir, $fileName);
