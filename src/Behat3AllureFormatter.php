@@ -335,9 +335,9 @@ class Behat3AllureFormatter implements Formatter
     }
 
     /**
-     * @param ExampleTested $event
+     * @param AfterOutlineTested $event
      */
-    public function onExampleTested(AfterScenarioTested $event)
+    public function onExampleTested(AfterOutlineTested $event)
     {
         $this->processScenarioResult($event);
     }
