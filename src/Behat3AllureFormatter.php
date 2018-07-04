@@ -506,7 +506,7 @@ class Behat3AllureFormatter implements Formatter
      */
     private function addTestCaseAttachment(AfterTested $event)
     {
-        if (!$event instanceof AfterScenarioTested) {
+        if (!$event instanceof AfterOutlineTested && !$event instanceof AfterScenarioTested) {
             return;
         }
 
