@@ -582,8 +582,10 @@ class Behat3AllureFormatter implements Formatter
     private function addTestCaseFailed()
     {
         $event = new TestCaseFailedEvent();
-        $event->withException($this->exception)
-            ->withMessage($this->exception->getMessage());
+        if ($this->exception != null) {
+            $event->withException($this->exception)->withMessage($this->exception->getMessage());
+        }
+
         Allure::lifecycle()->fire($event);
     }
 }
